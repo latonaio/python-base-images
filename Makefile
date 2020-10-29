@@ -40,6 +40,10 @@ docker-build-pylib-python3: build-python-package
 docker-push-pylib-python3: build-python-package
 	bash ./builders/docker-build-pylib-python3.sh push
 
+## how to install libraries on host
+docker-install-on-host: build-python-package
+	pip install git+ssh://git@bitbucket.org/latonaio/python-base-images.git
+
 ################## packaging
 build-python-package:
 	python3 setup.py sdist
