@@ -1,0 +1,33 @@
+# syntax = docker/dockerfile:experimental
+FROM python:3.7-slim
+
+# Install Dependencies
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+RUN apt-get update -y && apt-get upgrade -y && apt-get install -y \
+    build-essential \
+    cmake \
+    curl \
+    git \
+    g++ \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgtk-3-dev \
+    libssl-dev \
+    libgtk-3-dev \
+    libcurl4-openssl-dev \
+    libmariadb-dev-compat \
+    libmariadb-dev \
+    python-pip \
+    python3-pip \
+    python3-dev \
+    tzdata \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+ADD dist .
+ENV GRPC_PYTHON_BUILD_EXT_COMPILER_JOBS 8
+RUN --mount=type=cache,target=/root/.cache/pip python3 -m pip install ./aion-*.tar.gz
+
+CMD ["/bin/bash"]
+

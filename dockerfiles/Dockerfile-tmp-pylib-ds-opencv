@@ -1,0 +1,7 @@
+FROM python-library-opencv-deepstream-l4t:latest
+
+ADD dist .
+ENV GRPC_PYTHON_BUILD_EXT_COMPILER_JOBS 8
+RUN --mount=type=cache,target=/root/.cache/pip python3 -m pip install ./aion-*.tar.gz
+
+CMD ["/bin/bash"]
