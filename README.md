@@ -1,6 +1,12 @@
 # python-base-images
 AIONのマイクロサービスで利用するpythonライブラリ及びpython版のベースイメージです。
 
+## 動作環境
+### 前提条件
+動作には以下の環境であることを前提とします。
+* Ubuntu OS
+* ARM CPU搭載のデバイス
+
 ## セットアップ
 ```
 git clone https://github.com/latonaio/python-base-images.git
