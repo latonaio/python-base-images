@@ -162,6 +162,7 @@ class KanbanConnection:
 
         self.response_thread = Thread(target=self.receive_function, args=())
         self.response_thread.start()
+        self.response_thread.join()
 
     def close(self):
         self.channel.close()
