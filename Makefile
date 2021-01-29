@@ -25,6 +25,9 @@ docker-push-l4t-ds-ffmpeg: build-python-package
 docker-build-l4t-ds-opencv: build-python-package
 	bash ./builders/docker-build-pylib-ds-opencv.sh 7.2
 
+docker-build-l4t-ds-opencv-ffmpeg: build-python-package
+	bash ./builders/docker-build-pylib-ds-opencv-ffmpeg.sh 7.2
+
 docker-push-l4t-ds-opencv: build-python-package
 	bash ./builders/docker-build-pylib-ds-opencv.sh 7.2 true
 
