@@ -51,7 +51,6 @@ def main_decorator(component, level=DEBUG, async_kanban=False):
                     conn = KanbanConnectionAsync(addr) if addr else KanbanConnectionAsync()
                 else:
                     conn = KanbanConnection(addr) if addr else KanbanConnection()
-                conn.check_connectivity()
 
                 n = os.environ.get("MS_NUMBER")
                 n = int(n) if n else 1
@@ -71,7 +70,6 @@ def main_decorator(component, level=DEBUG, async_kanban=False):
             finally:
                 if conn is not None:
                     conn.close()
-                    conn.kanban_queue.put(None)
             return
         return _wrapper
     return _main_decorator
