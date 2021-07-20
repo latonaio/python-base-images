@@ -4,8 +4,6 @@
 
 __all__ = ["kanban","async_kanban"]
 
-from .kanban import KanbanConnection, unpack_any_message, \
-    pack_any_message, KanbanNotFoundError, \
-    KanbanServerNotFoundError, Kanban
+from .kanban import KanbanConnection, KanbanNotFoundError, KanbanServerNotFoundError, Kanban
 
 from .async_kanban import KanbanConnectionAsync
