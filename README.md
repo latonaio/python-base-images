@@ -4,17 +4,16 @@ Pythonアプリケーション用のDockerイメージを構築する際には�
 本イメージには、アプリケーションの実行に必要なすべてのもの（コード、バイナリ、ランタイム、およびその他の必要なファイルオブジェクト）が含まれています。  
 
 # 動作環境
-
+## 前提条件
 動作には以下の環境であることを前提とします。 
 AIONのプラットフォーム上での動作を前提としています。 使用する際は、事前にAIONの動作環境を用意してください。  
--　ARM CPU搭載のデバイス(NVIDIA Jetson シリーズ等)  
--　OS: Linux Ubuntu OS  
--　CPU: ARM64  
--　Kubernetes  
+
+-　OS: Linux OS  
+-　CPU: ARM / AMD / Intel    
+-　Kubernetes    
 -　AION のリソース  
   
-## 内容
-
+  
 `python-base-images` には以下のものが含まれています。  
 ```
     build-essential \
@@ -80,7 +79,4 @@ cd python-base-images
 make docker-build-pylib-lite
 make docker-build-l4t
 ```
-    
-# Notes
-aion-coreとprotoファイルを共有しているので、aion-core側でprotoファイルを変更した場合は変更内容を適用してください。  
-
+  
