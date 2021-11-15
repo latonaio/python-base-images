@@ -19,8 +19,8 @@ from setuptools import setup, find_packages
 setup(
     name="aion",
     version="0.0.1",
-    author="sho ishii",
-    author_email="sho.i@latonaio",
+    author="XXXXXXXXXXXX",
+    author_email="XXXXXXXXXXX",
     packages=find_packages(),
     install_requires=[
         "python-dateutil",
